@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+  <plugin-info> 
+    <description>${project.description}</description>  
+    <version>${project.version}</version>  
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
+    <param name="plugin-icon">images/pluginIcon.png</param>  
+    <param name="plugin-logo">images/pluginLogo.png</param> 
+  </plugin-info>  
+  <!-- add our i18n resource -->  
+  <resource type="i18n" name="i18n" location="myPlugin"/>  
+  <!-- add our web resources -->  
+  <web-resource key="myPlugin-resources" name="myPlugin Web Resources"> 
+    <dependency>com.atlassian.auiplugin:ajs</dependency>  
+    <resource type="download" name="myPlugin.css" location="/css/myPlugin.css"/>
+    <resource type="download" name="myPlugin.js" location="/js/myPlugin.js"/>  
+    <resource type="download" name="images/" location="/images"/>  
+    <context>myPlugin</context> 
+  </web-resource>  
+  <web-section name="25" i18n-name-key="25.name" key="25" location="admin_plugins_menu" weight="1000"> 
+    <description key="25.description">The 25 Plugin</description>  
+    <label key="25.label"/> 
+  </web-section>  
+  <web-item name="Web Item" i18n-name-key="web-item.name" key="web-item" section="admin_plugins_menu/25" weight="1000"> 
+    <description key="web-item.description">The Web Item Plugin</description>  
+    <label key="web-item.label"/>  
+    <link linkId="web-item-link">/secure/TESTDEVAction.jspa</link>
+  </web-item>  
+  <webwork1 key="testdev" name="TESTDEV" i18n-name-key="testdev.name"> 
+    <description key="testdev.description">The TESTDEV Plugin</description>  
+    <actions> 
+      <action name="com.atlassian.tutorial.myPlugin.TESTDEVAction" alias="TESTDEVAction">
+        <view name="success">/templates/testdev/success.vm</view>  
+        <view name="input">/templates/testdev/input.vm</view>  
+        <view name="error">/templates/testdev/error.vm</view> 
+      </action> 
+    </actions> 
+  </webwork1>
+</atlassian-plugin>

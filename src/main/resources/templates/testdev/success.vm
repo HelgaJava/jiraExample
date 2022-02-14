@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>$i18n.getText("title.name")</title>
+    <meta name="decorator" content="atl.admin"/>
+</head>
+<body>
+<form class="aui">
+    <div class="aui-message aui-message-info">
+        <p class="title">
+            <strong>Привет, admin!</strong>
+        </p>
+        <p>Вот твои ворклоги:</p>
+        <p>ISSUE_KEY : TIME_SPENT</p>
+        <p>ISSUE_KEY : TIME_SPENT</p>
+    </div>
+    <div class="field-group">
+        <label for="text-input">Текст:</label>
+        <input class="text" type="text" id="text-input" name="text1">
+    </div>
+    <div class="buttons-container">
+        <div class="buttons">
+            <button class="aui-button aui-button-primary" type="submit" id="save-button" style="color: black">Отправить</button>
+        </div>
+    </div>
+
+
+</form>
+</body>
+</html>
